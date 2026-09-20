@@ -2,7 +2,7 @@ import { Container, CssBaseline, List, ListItem, ListItemText, Typography } from
 import axios from "axios";
 import { useEffect, useState } from "react"
 import NavBar from "./NavBar";
-import ActivityDashboard from "../../features/activities/ActivityDashboard";
+import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
 
 function App() {
 
