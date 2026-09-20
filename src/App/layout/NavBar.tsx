@@ -1,25 +1,58 @@
-import { Menu } from '@mui/icons-material'
-import { AppBar, Box, Button, CssBaseline, IconButton, Toolbar, Typography } from '@mui/material'
-import React from 'react'
+import { Group } from '@mui/icons-material'
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  Toolbar,
+  Typography,
+} from '@mui/material'
 
 export default function NavBar() {
   return (
-    <>
-    <CssBaseline />
-    <Box sx={{flowGrow:1}}>
-     <AppBar position='static'>
-      <Toolbar>        
-       <IconButton size='large' edge='start' color='inherit' aria-label='menu' sx={{ mr:2}}>
-        <Menu />
-       </IconButton>
-       
-       <Typography variant='h6' component='div' sx={{ flexGrow: 2}}>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar
+        position="static"
+        sx={{
+          backgroundImage:
+            'linear-gradient(135deg, #182a73 0%, #218aae 69%, #20a7ac 89%)',
+        }}
+      >
+        <Container maxWidth="xl">
+          <Toolbar
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Box>
+              <Button
+                color="inherit"
+                sx={{ display: 'flex', gap: 2 }}
+              >
+                <Group fontSize="large" />
+                <Typography variant="h4">
+                  this
+                </Typography>
+              </Button>
+            </Box>
 
-       </Typography>
-       <Button color='inherit'> Login </Button>
-      </Toolbar>
-     </AppBar>
+            <Box sx={{ display: 'flex' }}>
+              <Button color="inherit">Activities</Button>
+              <Button color="inherit">Activities</Button>
+              <Button color="inherit">Activities</Button>
+            </Box>
+
+            <Button
+              size="large"
+              variant="contained"
+              color="warning"
+            >
+              Create Activity
+            </Button>
+          </Toolbar>
+        </Container>
+      </AppBar>
     </Box>
-    </>
   )
 }
