@@ -39,8 +39,8 @@ export default function NavBar() {
 
             <Box sx={{ display: 'flex' }}>
               <Button color="inherit">Activities</Button>
-              <Button color="inherit">Activities</Button>
-              <Button color="inherit">Activities</Button>
+              <Button color="inherit">About</Button>
+              <Button color="inherit">Contact</Button>
             </Box>
 
             <Button

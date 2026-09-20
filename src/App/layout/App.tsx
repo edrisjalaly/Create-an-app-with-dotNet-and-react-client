@@ -2,6 +2,7 @@ import { Container, CssBaseline, List, ListItem, ListItemText, Typography } from
 import axios from "axios";
 import { useEffect, useState } from "react"
 import NavBar from "./NavBar";
+import ActivityDashboard from "../../features/activities/ActivityDashboard";
 
 function App() {
 
@@ -18,13 +19,7 @@ function App() {
     <CssBaseline />
     <NavBar />
     <Container sx={{ mt:3}}>
-      <List>
-        { Activities.map((activity) => (            
-          <ListItem key={activity.id}>
-            <ListItemText>{activity.title}</ListItemText>            
-          </ListItem>
-        ))}
-      </List>
+     <ActivityDashboard activities={Activities} />
     </Container>
     </>
   ) 
