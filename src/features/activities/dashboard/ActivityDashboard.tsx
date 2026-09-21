@@ -3,17 +3,25 @@ import ActivityList from './ActivityList'
 import ActivityDetails from '../details/ActivityDetails'
 
 type Props = {
-    activities: Activity[]
-}
+  activities: Activity[]
+  selectedActivity?: Activity;
 
-export default function ActivityDashboard({activities}: Props) {
+  selectActivity: (id: string) =>void;
+  cancelActivity : () => void;
+ }
+
+export default function ActivityDashboard({activities, selectedActivity, selectActivity, cancelActivity }: Props) {
+
+  console.log(selectedActivity);
+
   return (
     <Grid container spacing={3}>
      <Grid size={7}>
-      <ActivityList activities={activities} />
+      <ActivityList activities={activities} selectActivity={selectActivity}  />
      </Grid>
-     <Grid size={5}>
-      {activities[1] && <ActivityDetails activity={activities[1]} /> }
+     <Grid size={5}> 
+      
+      {selectActivity && <ActivityDetails activity={selectedActivity} cancelActivity={cancelActivity} /> }
      </Grid>
     </Grid>
   )

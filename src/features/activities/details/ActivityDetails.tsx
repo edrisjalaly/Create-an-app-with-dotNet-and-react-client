@@ -1,26 +1,26 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 
 type Props = {
-    activity: Activity
+    activity?: Activity
+    cancelActivity: () => void;
 }
 
-export default function ActivityDetails({activity}: Props) {
+export default function ActivityDetails({activity, cancelActivity}: Props) {  
   return (
     <Card>
      <CardMedia
      component='img' 
-     src={`/images/categoryImages/${activity.category}.jpg`} />
+     src={`/images/categoryImages/${activity?.category}.jpg`} />
 
      <CardContent>
-      <Typography variant="h5">{activity.title}</Typography>
-      <Typography variant="subtitle1">{activity.date}</Typography>
-      <Typography variant="body1">{activity.description}</Typography>
+      <Typography variant="h5">{activity?.title}</Typography>
+      <Typography variant="subtitle1">{activity?.date}</Typography>
+      <Typography variant="body1">{activity?.description}</Typography>
      </CardContent>
      <CardActions>
         <Button color="primary"> Edit </Button>
-        <Button color="primary"> Cancel </Button>
+        <Button color="primary" onClick={cancelActivity}> Cancel </Button>
      </CardActions>
     </Card>
- 
-  )
+  ) 
 }
