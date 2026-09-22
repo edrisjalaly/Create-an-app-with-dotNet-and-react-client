@@ -21,7 +21,7 @@ export default function ActivityDashboard({activities, selectedActivity, selectA
      </Grid>
      <Grid size={5}> 
       
-      {selectActivity && <ActivityDetails activity={selectedActivity} cancelActivity={cancelActivity} /> }
+      {selectedActivity && <ActivityDetails activity={selectedActivity} cancelActivity={cancelActivity} /> }
      </Grid>
     </Grid>
   )
