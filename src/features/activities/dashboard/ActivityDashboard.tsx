@@ -1,6 +1,7 @@
 import { Grid } from '@mui/material'
 import ActivityList from './ActivityList'
 import ActivityDetails from '../details/ActivityDetails'
+import ActivityForm from '../form/ActivityForm'
 
 type Props = {
   activities: Activity[]
@@ -22,6 +23,7 @@ export default function ActivityDashboard({activities, selectedActivity, selectA
      <Grid size={5}> 
       
       {selectedActivity && <ActivityDetails activity={selectedActivity} cancelActivity={cancelActivity} /> }
+      <ActivityForm />
      </Grid>
     </Grid>
   )
